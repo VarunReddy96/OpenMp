@@ -1,0 +1,15 @@
+package edu.rit.cs.examples;
+
+public class OMP_Critical {
+    public static void main(String[] args) {
+        // omp parallel
+        {
+            // omp critical
+            {
+                System.out.println("These lines");
+                System.out.println("are always printed");
+                System.out.println("in same order.");
+            }
+        }
+    }
+}
