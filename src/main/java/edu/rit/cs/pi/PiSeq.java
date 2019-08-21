@@ -1,8 +1,7 @@
+
+
 import java.util.Random;
 public class PiSeq {
-
-
-
     public static void main(String[] args) throws Exception {
         long seed;
         long N;

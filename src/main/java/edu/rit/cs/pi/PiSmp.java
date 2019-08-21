@@ -14,7 +14,7 @@ public class PiSmp {
         seed = Long.parseLong(args[0]);
         N = Integer.parseInt(args[1]);
 
-        long[] threadCounter = new long[Runtime.getRuntime().availableProcessors()];;
+        long[] threadCounter = new long[Runtime.getRuntime().availableProcessors()];
 
         // omp parallel
         {
@@ -29,6 +29,7 @@ public class PiSmp {
 
             // omp barrier
             {}
+
             for (int i = OMP4J_NUM_THREADS / 2; i > 0; i >>= 1) {
                 if (OMP4J_THREAD_NUM < i)
                     threadCounter[OMP4J_THREAD_NUM] += threadCounter[OMP4J_THREAD_NUM + i];
