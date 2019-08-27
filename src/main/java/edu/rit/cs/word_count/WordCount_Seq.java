@@ -1,4 +1,4 @@
-package edu.rit.cs.wordcount;
+package edu.rit.cs.word_count;
 
 import edu.rit.cs.MyTimer;
 

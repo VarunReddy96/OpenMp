@@ -1,4 +1,4 @@
-package edu.rit.cs.wordcount;
+package edu.rit.cs.word_count;
 
 //Id,ProductId,UserId,ProfileName,HelpfulnessNumerator,HelpfulnessDenominator,Score,Time,Summary,Text
 public class AmazonFineFoodReview {
