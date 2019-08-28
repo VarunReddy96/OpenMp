@@ -73,7 +73,7 @@ public class Prime {
         else if (n > MAX_PRIME)
             return isPrimeTrialDivision (n);
         else
-            return search(primes, 2, MAX_PRIME, n) != -1;
+            return search(primes, 0, NUM_PRIMES, n) != -1;
     }
 
 
