@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16131d19-4079-4b7f-b194-aca81493dab4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSeq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSeq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/org/omp4j/runtime/AbstractExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/org/omp4j/runtime/DynamicExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/org/omp4j/runtime/IOMPExecutor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/org/omp4j/runtime/StaticExecutor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/org/omp4j/runtime/StaticExecutor.class" beforeDir="false" />
-    </list>
+    <list default="true" id="16131d19-4079-4b7f-b194-aca81493dab4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="94" column="27" selection-start-line="93" selection-start-column="41" selection-end-line="94" selection-end-column="27" />
+            <state relative-caret-position="2760">
+              <caret line="96" column="25" selection-start-line="96" selection-end-line="96" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSmp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="546">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,8 +160,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,17 +203,18 @@
       <workItem from="1566274196121" duration="2820000" />
       <workItem from="1566354058164" duration="20000" />
       <workItem from="1566367406298" duration="417000" />
+      <workItem from="1566514549905" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3676000" />
+    <option name="totallyTimeSpent" value="3687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="32" width="1853" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26488593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2687813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -275,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="94" column="27" selection-start-line="93" selection-start-column="41" selection-end-line="94" selection-end-column="27" />
+        <state relative-caret-position="2760">
+          <caret line="96" column="25" selection-start-line="96" selection-end-line="96" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -285,8 +277,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSmp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="546">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
