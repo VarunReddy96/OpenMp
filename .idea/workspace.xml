@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="16131d19-4079-4b7f-b194-aca81493dab4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSeq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSeq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +65,7 @@
       <workItem from="1566354058164" duration="20000" />
       <workItem from="1566367406298" duration="417000" />
       <workItem from="1566514549905" duration="11000" />
-      <workItem from="1567036098998" duration="1122000" />
+      <workItem from="1567036098998" duration="1472000" />
     </task>
     <servers />
   </component>

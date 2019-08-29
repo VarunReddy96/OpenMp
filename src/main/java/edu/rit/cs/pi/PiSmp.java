@@ -58,7 +58,8 @@ public class PiSmp {
 
         }
 
-        System.out.print(4.0 * threadCounter[0] / N);
+        System.out.printf("pi = 4*%d/%d = %.9f%n", count, N, 4.0 * threadCounter[0] / N);
+
     }
 
     /**
