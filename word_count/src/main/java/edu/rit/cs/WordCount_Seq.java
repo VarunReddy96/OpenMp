@@ -3,10 +3,12 @@ package edu.rit.cs;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class WordCount_Seq {
-    public static final String AMAZON_FINE_FOOD_REVIEWS_file="dataset/amazon-fine-food-reviews/Reviews.csv";
+    public static final String AMAZON_FINE_FOOD_REVIEWS_file="amazon-fine-food-reviews/Reviews.csv";
 
     public static List<AmazonFineFoodReview> read_reviews(String dataset_file) {
         List<AmazonFineFoodReview> allReviews = new ArrayList<>();
@@ -41,18 +43,18 @@ public class WordCount_Seq {
 //        }
 
         MyTimer myTimer = new MyTimer("wordCount");
-
-
         myTimer.start_timer();
         /* Tokenize words */
         List<String> words = new ArrayList<String>();
         for(AmazonFineFoodReview review : allReviews) {
-            StringTokenizer st = new StringTokenizer(review.get_Summary());
-            if(st.hasMoreTokens())
-                words.add(st.nextToken());
+            Pattern pattern = Pattern.compile("([a-zA-Z]+)");
+            Matcher matcher = pattern.matcher(review.get_Summary());
+
+            while(matcher.find())
+                words.add(matcher.group().toLowerCase());
         }
 
-        /* Count words */
+//        /* Count words */
         Map<String, Integer> wordcount = new HashMap<>();
         for(String word : words) {
             if(!wordcount.containsKey(word)) {
