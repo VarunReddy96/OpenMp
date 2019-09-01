@@ -1,7 +1,5 @@
 import java.util.Random;
-
 import static java.lang.Math.*;
-
 import java.util.Arrays;
 
 /**
