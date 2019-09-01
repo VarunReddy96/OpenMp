@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16131d19-4079-4b7f-b194-aca81493dab4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/LemoineConjecture/LemoineSmp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSeq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSeq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/Zombie/ZombieSmp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +26,11 @@
   </component>
   <component name="ProjectId" id="1Q4i6tHu3myEnW2SoLVGnFuHN6V" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Parallel/Homework1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,7 +69,7 @@
       <workItem from="1566514549905" duration="11000" />
       <workItem from="1567036098998" duration="2844000" />
       <workItem from="1567104879662" duration="633000" />
-      <workItem from="1567371971915" duration="1023000" />
+      <workItem from="1567371971915" duration="9354000" />
     </task>
     <servers />
   </component>
