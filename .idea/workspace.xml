@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16131d19-4079-4b7f-b194-aca81493dab4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/pi/PiSmp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/rit/cs/primality/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/rit/cs/primality/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,8 @@
       <workItem from="1566354058164" duration="20000" />
       <workItem from="1566367406298" duration="417000" />
       <workItem from="1566514549905" duration="11000" />
-      <workItem from="1567036098998" duration="1472000" />
+      <workItem from="1567036098998" duration="2844000" />
+      <workItem from="1567104879662" duration="633000" />
     </task>
     <servers />
   </component>
@@ -77,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
