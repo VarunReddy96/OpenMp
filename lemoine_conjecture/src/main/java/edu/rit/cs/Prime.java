@@ -1,4 +1,4 @@
-package edu.rit.cs.lemoine_conjecture;
+package edu.rit.cs;
 
 /**
  * Class Prime provides a class for iterating over odd primes and a method to
