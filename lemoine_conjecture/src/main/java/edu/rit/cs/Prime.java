@@ -1,5 +1,7 @@
 package edu.rit.cs;
 
+
+import java.util.Comparator;
 /**
  * Class Prime provides a class for iterating over odd primes and a method to
  * determine whether an <TT>int</TT> is prime.
@@ -10,12 +12,76 @@ package edu.rit.cs;
  * (modified by Peizhao Hu on 27-Aug-2019)
  *
  */
+
+class Searching{
+
+    public static class Integer {
+        public static final Searching.Integer DEFAULT = new Searching.Integer();
+
+        public Integer() {
+        }
+
+        public int compare(int var1, int var2) {
+            return var1 - var2;
+        }
+    }
+
+
+    public static int searchSorted(int[] var0, int var1) {
+        return searchSorted((int[])var0, 0, var0.length, (int)var1, (Searching.Integer)Searching.Integer.DEFAULT);
+    }
+
+    public static int searchSorted(int[] var0, int var1, int var2, int var3, Searching.Integer var4) {
+        if (var1 >= 0 && var2 >= 0 && var1 + var2 <= var0.length) {
+            if (var0.length == 0) {
+                return -1;
+            } else {
+                int var5 = var1;
+                int var6 = var4.compare(var0[var1], var3);
+                if (var6 == 0) {
+                    return var1;
+                } else if (var6 > 0) {
+                    return -1;
+                } else {
+                    int var7 = var1 + var2 - 1;
+                    int var8 = var4.compare(var0[var7], var3);
+                    if (var8 == 0) {
+                        return var7;
+                    } else if (var8 < 0) {
+                        return -1;
+                    } else {
+                        while(var7 - var5 > 1) {
+                            int var9 = (var7 + var5) / 2;
+                            int var10 = var4.compare(var0[var9], var3);
+                            if (var10 == 0) {
+                                return var9;
+                            }
+
+                            if (var10 < 0) {
+                                var5 = var9;
+                                var6 = var10;
+                            } else {
+                                var7 = var9;
+                                var8 = var10;
+                            }
+                        }
+
+                        return var6 == 0 ? var5 : (var8 == 0 ? var7 : -1);
+                    }
+                }
+            }
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+}
+
 public class Prime {
 
     /**
      * Prevent construction.
      */
-    private Prime() {
+    private Prime(){
     }
 
     /**
@@ -28,7 +94,7 @@ public class Prime {
         /**
          * Construct a new odd prime iterator.
          */
-        public Iterator() {
+        public Iterator(){
             restart();
         }
 
@@ -46,15 +112,17 @@ public class Prime {
          * @return  Prime.
          */
         public int next() {
-            if (p < MAX_PRIME) {
+            if (p < MAX_PRIME)
+            {
                 p = primes[i++];
-            } else {
+            }
+            else
+            {
                 do
                     p += 2;
                 while (! isPrimeTrialDivision (p));
                 if (p < 0)
-                    throw new IllegalStateException
-                            ("Prime.Iterator.next(): Overflow");
+                    throw new IllegalStateException("Prime.Iterator.next(): Overflow");
             }
             return p;
         }
@@ -73,42 +141,7 @@ public class Prime {
         else if (n > MAX_PRIME)
             return isPrimeTrialDivision (n);
         else
-            return search(primes, 0, NUM_PRIMES, n) != -1;
-    }
-
-
-    // Returns index of key in arr[l..h]
-    // if key is present, otherwise returns -1
-    private static int search(int arr[], int l, int h, int key)
-    {
-        if (l > h)
-            return -1;
-
-        int mid = (l+h)/2;
-        if (arr[mid] == key)
-            return mid;
-
-        /* If arr[l...mid] first subarray is sorted */
-        if (arr[l] <= arr[mid])
-        {
-            /* As this subarray is sorted, we
-               can quickly check if key lies in
-               half or other half */
-            if (key >= arr[l] && key <= arr[mid])
-                return search(arr, l, mid-1, key);
-            /*If key not lies in first half subarray,
-           Divide other half  into two subarrays,
-           such that we can quickly check if key lies
-           in other half */
-            return search(arr, mid+1, h, key);
-        }
-
-        /* If arr[l..mid] first subarray is not sorted,
-           then arr[mid... h] must be sorted subarry*/
-        if (key >= arr[mid] && key <= arr[h])
-            return search(arr, mid+1, h, key);
-
-        return search(arr, l, mid-1, key);
+            return Searching.searchSorted(primes, n) != -1;
     }
 
     /**
@@ -118,17 +151,21 @@ public class Prime {
      *
      * @return  True if <TT>n</TT> is prime, false otherwise.
      */
-    private static boolean isPrimeTrialDivision(int n) {
+    private static boolean isPrimeTrialDivision
+    (int n)
+    {
         for (int i = 0; i < NUM_PRIMES; ++ i)
             if (n % primes[i] == 0)
                 return false;
         return true;
     }
 
+
     /**
      * Table of primes up to sqrt(2^31 - 1).
      */
-    private static final int[] primes = new int[] {
+    private static final int[] primes = new int[]
+            {
                     2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
                     71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139,
                     149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223,
@@ -586,9 +623,10 @@ public class Prime {
                     46099, 46103, 46133, 46141, 46147, 46153, 46171, 46181, 46183, 46187,
                     46199, 46219, 46229, 46237, 46261, 46271, 46273, 46279, 46301, 46307,
                     46309, 46327, 46337,
-    };
+            };
 
     private static final int NUM_PRIMES = 4792;
     private static final int MAX_PRIME = 46337;
 
 }
+
