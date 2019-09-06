@@ -1,0 +1,10 @@
+<h2>Breaking RSA</h2>
+<p><a name="system"></a></p>
+<p>Here is a simplified description of the RSA public key encryption algorithm. The public encryption key consists of two integers (<em>e,&nbsp;n</em>), where&nbsp;<em>e</em>&nbsp;is an exponent and&nbsp;<em>n</em>&nbsp;is a modulus. For this project,&nbsp;<em>e</em>&nbsp;=&nbsp;3 and&nbsp;<em>n</em>&nbsp;is either a prime or the product of two primes. To encrypt a plaintext message&nbsp;<em>m</em>, where&nbsp;<em>m</em>&nbsp;is an integer in the range 0 through&nbsp;<em>n</em>&minus;1, compute the following formula yielding the ciphertext&nbsp;<em>c</em>, where&nbsp;<em>c</em>&nbsp;is also an integer in the range 0 through&nbsp;<em>n</em>&minus;1:</p>
+<p></p>
+<center><em>c</em>&nbsp;=&nbsp;<em>m</em><sup>3</sup>&nbsp;(mod&nbsp;<em>n</em>)</center>
+<p>To decrypt the ciphertext, normally you have to know the private decryption key that corresponds to the public encryption key. However, you can also decrypt the ciphertext without knowing the private key by computing a modular cube root:</p>
+<p></p>
+<center><em>m</em>&nbsp;=&nbsp;<em>c</em><sup>1/3</sup>&nbsp;(mod&nbsp;<em>n</em>)</center>
+<p>If&nbsp;<em>n</em>&nbsp;is a large integer, e.g. a 2048-bit integer, no one knows an efficient algorithm to compute a modular cube root. But if&nbsp;<em>n</em>&nbsp;is small, it becomes possible to compute the modular cube root by brute force search: Given a ciphertext&nbsp;<em>c</em>, compute&nbsp;<em>m</em><sup>3</sup>&nbsp;(mod&nbsp;<em>n</em>) for every&nbsp;<em>m</em>, 0&nbsp;&le;&nbsp;<em>m</em>&nbsp;&le;&nbsp;<em>n</em>&minus;1, until the answer equals&nbsp;<em>c</em>.</p>
+<p>Depending on the particular values of&nbsp;<em>c</em>&nbsp;and&nbsp;<em>n</em>,&nbsp;<em>c</em>&nbsp;might have anywhere from zero to three modular cube roots&mdash;that is, zero to three values of&nbsp;<em>m</em>&nbsp;such that&nbsp;<em>c</em>&nbsp;=&nbsp;<em>m</em><sup>3</sup>&nbsp;(mod&nbsp;<em>n</em>).</p>
