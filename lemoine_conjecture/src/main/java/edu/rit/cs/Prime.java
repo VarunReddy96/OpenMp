@@ -2,6 +2,7 @@ package edu.rit.cs;
 
 
 import java.util.Comparator;
+
 /**
  * Class Prime provides a class for iterating over odd primes and a method to
  * determine whether an <TT>int</TT> is prime.
@@ -81,7 +82,7 @@ public class Prime {
     /**
      * Prevent construction.
      */
-    private Prime(){
+    private Prime() {
     }
 
     /**
