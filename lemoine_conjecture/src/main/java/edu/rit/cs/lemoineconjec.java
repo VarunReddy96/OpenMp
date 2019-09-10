@@ -13,8 +13,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * This program verifies Lemoine's Conjecture for all odd integers in a given range and prints out
- * n, p, and q values such that p is the largest among the integers n examined.
+ * This program verifies Lemoine's Conjecture for all odd integers in a given range taken from command
+ * line arguments and prints out n, p, and q values such that p is the largest among the integers n examined.
+ * If more that one integer yielded the same maximum p value, the program must print the one with the largest n value.
  *
  * @author Bujala Varun Reddy(vb6310)
  */
@@ -39,11 +40,10 @@ public class lemoineconjec {
         int i = 2;
         ArrayList<Integer> qlist = new ArrayList<>();
         while (i < num / 2) {
-            //System.out.println("Adding i:");
+
             qlist.add(i);
             i = odd.next();
         }
-        //Collections.reverse(qlist); // the list is reversed so as to find the value of p quickly
         this.checktheorm(qlist, num);
 
     }
@@ -58,30 +58,22 @@ public class lemoineconjec {
 
     public void checktheorm(ArrayList<Integer> qlist, int num) {
         //System.out.println("Entering checktheorm with x: "+ x);
-        for(int j = (qlist.size()-1);j>=0;j--){
-            //System.out.println("the value of j is: "+j + " and value is :"+qlist.get(j)+"counting: "+ this.counting);
+        for(int j = (qlist.size()-1);j>=0;j--){ //the list is reversed so as to find the value of p quickly
             if((num-2*qlist.get(j))!=2 && Prime.isPrime((num-2*qlist.get(j)))){ //checking if the p value is not even and is a prime number.
                 if (this.p < (num-2*qlist.get(j))) {
                     this.p = (num-2*qlist.get(j));
                     this.q = qlist.get(j);
                     this.maxnum = num;
-                    //System.out.println("IN if");
-                    //System.out.println(x + "= " + (x-2*j) + "+ 2 * " + j);
                 } else if (this.p == (num-2*qlist.get(j))) {
                     if (this.q < qlist.get(j)) {
                         this.q = qlist.get(j);
                         this.maxnum = num;
-                        //System.out.println("IN else if");
-                        //System.out.println(x + "= " + (x-2*j) + "+ 2 * " + j);
                     }
                 }
-                //System.out.println(num + "= " + (num-2*qlist.get(j)) + "+ 2 * " + qlist.get(j));
-                //this.counting++;
 
                 break;
             }
             this.counting++;
-            //System.out.println("the value after if--------of j is: "+j + " counting: "+ this.counting);
         }
     }
 
