@@ -1,3 +1,5 @@
+package edu.rit.cs;
+
 /*
  * lemoineconjec.java
  *
@@ -57,7 +59,6 @@ public class lemoineconjec {
      */
 
     public void checktheorm(ArrayList<Integer> qlist, int num) {
-        //System.out.println("Entering checktheorm with x: "+ x);
         for(int j = (qlist.size()-1);j>=0;j--){ //the list is reversed so as to find the value of p quickly
             if((num-2*qlist.get(j))!=2 && Prime.isPrime((num-2*qlist.get(j)))){ //checking if the p value is not even and is a prime number.
                 if (this.p < (num-2*qlist.get(j))) {
