@@ -3,7 +3,7 @@
  * Based on https://www.cs.rit.edu/~ark/bcbd_2/java2html.php?file=1
  */
 
-package edu.rit.cs.primality;
+package edu.rit.cs;
 
 public class Primality_Seq {
 

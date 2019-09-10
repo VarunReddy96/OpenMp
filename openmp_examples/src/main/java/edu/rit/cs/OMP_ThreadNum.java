@@ -1,4 +1,4 @@
-package edu.rit.cs.examples;
+package edu.rit.cs;
 
 public class OMP_ThreadNum {
     /** Let's assume that we have e.g. 8 core computer and need to run parallel section only twice */

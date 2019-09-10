@@ -1,4 +1,4 @@
-package edu.rit.cs.pi;
+package edu.rit.cs;
 
 public class Pi_Spark {
 

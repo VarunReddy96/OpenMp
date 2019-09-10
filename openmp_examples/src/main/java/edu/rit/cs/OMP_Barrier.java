@@ -1,4 +1,4 @@
-package edu.rit.cs.examples;
+package edu.rit.cs;
 
 public class OMP_Barrier {
         public static void main(String[] args) {
