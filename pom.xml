@@ -33,6 +33,7 @@
     <module>primality</module>
     <module>us_census_diversity_index</module>
     <module>word_count</module>
+    <module>coin_mining</module>
   </modules>
 
   <properties>
