@@ -13,6 +13,7 @@ package edu.rit.cs;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This program verifies Lemoine's Conjecture for all odd integers in a given range taken from command
@@ -27,17 +28,27 @@ public class lemoineconjec {
     public int p = 0;
     public int q = 0;
     public int counting = 0;
+    int previous = 2;
+    Prime.Iterator odd_iterator = new Prime.Iterator();
+    List<Integer> qlist = new ArrayList<>();
+
 
     public lemoineconjec() {
     } //default constructor
 
 
-    public void checkarguments(int x, int y) throws Exception {
-        if (x % 2 == 0 || y % 2 == 0 || y <= x || x <= 5) {
-            throw new Exception();
+    public boolean checkarguments(int lower, int upper) {
+        boolean check = false;
+        if (lower % 2 != 0 && lower > 5) {
+            check = true;
+            //throw new Exception();
         }
+        if (check && upper % 2 != 0 && upper > lower){
+            return true;
+        }
+        System.out.println("Enter valid Integers");
+        return false;
     }
-
 
     /**
      * This method creates a list of q values and verifies the lemoine conjecture for the num inputed.
@@ -45,18 +56,20 @@ public class lemoineconjec {
      * @param num: The num to verify lemoine conjecture.
      */
 
-    public void findQ(int num) {
-        Prime.Iterator odd = new Prime.Iterator();
-        int i = 2;
-        ArrayList<Integer> qlist = new ArrayList<>();
-        while (i < num / 2) {
+    public void Qlist(int num){
 
-            qlist.add(i);
-            i = odd.next();
+        int i;
+        while (previous < (num + 1) / 2) {
+
+            qlist.add(previous);
+            i = odd_iterator.next();
+            previous = i;
+
         }
-        this.checktheorm(qlist, num);
+        checktheorm(qlist,num);
 
     }
+
 
     /**
      * This method is a helper method to verify the lemoine conjecture for the num inputed.
@@ -65,7 +78,7 @@ public class lemoineconjec {
      * @param qlist: the list of suitable q values.
      */
 
-    public void checktheorm(ArrayList<Integer> qlist, int num) {
+    public void checktheorm(List<Integer> qlist, int num) {
         for (int j = (qlist.size() - 1); j >= 0; j--) { //the list is reversed so as to find the value of p quickly
             if ((num - 2 * qlist.get(j)) != 2 && Prime.isPrime((num - 2 * qlist.get(j)))) { //checking if the p value is not even and is a prime number.
                 if (this.p < (num - 2 * qlist.get(j))) {
@@ -73,8 +86,8 @@ public class lemoineconjec {
                     this.q = qlist.get(j);
                     this.maxnum = num;
                 } else if (this.p == (num - 2 * qlist.get(j))) {
-                    if (this.q < qlist.get(j)) {
-                        this.q = qlist.get(j);
+                    if (this.maxnum < num) {
+                        //this.q = qlist.get(j);
                         this.maxnum = num;
                     }
                 }
@@ -94,18 +107,15 @@ public class lemoineconjec {
     public static void main(String[] args) {
         // takes in 2 command line arguments
         lemoineconjec t = new lemoineconjec();
-        try {
-            t.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
-
-        } catch (Exception e) {
-            System.out.println("Enter valid integers values");
+        if(!t.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))){
             return;
         }
         int x = Integer.parseInt(args[0]);
+        //t.Qlist(x);
         long starttime = System.currentTimeMillis();
         while (x <= Integer.parseInt(args[1])) {
             if (x % 2 != 0) {
-                t.findQ(x);
+                t.Qlist(x);
             }
             x++;
         }
