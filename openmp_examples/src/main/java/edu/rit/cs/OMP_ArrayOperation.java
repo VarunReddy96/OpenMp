@@ -13,7 +13,6 @@ public class OMP_ArrayOperation {
 
     public static int[] ArrayAddition(int size, int[] A, int[] B) {
         int[] C = new int[size];
-
         for(int i=0; i<size; i++) {
                 C[i] = A[i] + B[i];
         }
@@ -22,7 +21,6 @@ public class OMP_ArrayOperation {
 
     public static int[] ArrayAdditionOMP(int size, int[] A, int[] B) {
         int[] C = new int[size];
-
         // omp parallel for threadNum(4)
         for(int i=0; i<size; i++) {
             C[i] = A[i] + B[i];
@@ -32,10 +30,13 @@ public class OMP_ArrayOperation {
 
 
     public static void main(String[] args) {
-        int size=1000;
+        int size=10000000;
 
         int[] A = new int[size];
         int[] B = new int[size];
+
+        init(size, A, 1);
+        init(size, B, 2);
 
         MyTimer myTimer = new MyTimer("ArrayAddition");
         myTimer.start_timer();
