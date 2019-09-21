@@ -1,4 +1,9 @@
-*) I have submitted 2 .java files(excluding the Prime.java)as part of Programming project 1. 
+*) I have submitted 2 .java files(excluding the Prime.java)as part of Programming project 1. To compile sequentially
+    javac -d classes Lemoineconjec.java Prime.java
+    java -cp classes edu.rit.cs.Lemoineconjec 1000001 1999999
+   To compile in parallel using omp4j
+     java -jar <path-to-JAR> -d classes1 Lemoineconjec.java Prime.java
+     java -cp classes1 edu.rit.cs.Lemoineconjec 1000001 1999999
 
 *) Lemoineconjec is the main class for this project. If this .java file is run using javac command it executes sequentially 
    and if omp4j.jar is used it performs the computation in parallel.
