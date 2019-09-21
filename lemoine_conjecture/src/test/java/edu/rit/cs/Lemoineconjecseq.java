@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This program verifies Lemoine's Conjecture for all odd integers in a given range taken from command
+ * This program verifies Lemoine's Conjecture(only in sequential) for all odd integers in a given range taken from command
  * line arguments and prints out n, p, and q values such that p is the largest among the integers n examined.
  * If more that one integer yielded the same maximum p value, the program must print the one with the largest n value.
  *
@@ -82,7 +82,6 @@ public class Lemoineconjecseq {
 
     }
 
-
     /**
      * This method is a helper method to verify the lemoine conjecture for the num inputed.
      *
@@ -102,7 +101,6 @@ public class Lemoineconjecseq {
                         this.maxnum = num;
                     }
                 }
-
                 break;
             }
         }
@@ -115,23 +113,17 @@ public class Lemoineconjecseq {
      */
 
     public static void main(String[] args) {
-        // takes in 2 command line arguments
         Lemoineconjecseq lemoine = new Lemoineconjecseq();
-        if(!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))){
-            return;
-        }
+        if(!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))){ return;}
         int x = Integer.parseInt(args[0]);
         lemoine.Qlist(x);
-        long starttime = System.currentTimeMillis();
         while (x <= Integer.parseInt(args[1])) {
             if (x % 2 != 0) {
                 lemoine.Qlist(x);
             }
             x++;
         }
-        long endtime = System.currentTimeMillis();
         System.out.println(lemoine.maxnum + " = " + lemoine.p + " + 2 * " + ((lemoine.maxnum - lemoine.p) / 2));
-        System.out.println("Time elapsed : " + (endtime - starttime));
     }
 }
 
