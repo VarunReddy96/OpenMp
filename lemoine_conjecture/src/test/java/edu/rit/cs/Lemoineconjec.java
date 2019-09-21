@@ -11,10 +11,7 @@ package edu.rit.cs;
  */
 
 
-
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,7 +26,6 @@ public class Lemoineconjec {
     public int maxnum = 0;
     public int p = 0;
     public int q = 0;
-    public boolean check = true;
     List<Integer> qlist = new ArrayList<>();
 
     /**
@@ -78,36 +74,6 @@ public class Lemoineconjec {
         }
     }
 
-
-    /**
-     * This method is a helper method to verify the lemoine conjecture for the num inputed.
-     *
-     * @param num:   The num to verify lemoine conjecture.
-     * @param qlist: the list of suitable q values.
-     */
-
-    public void checktheorm(List<Integer> qlist, int num) {
-        for (int j = (qlist.size() - 1); j >= 0; j--) { //the list is reversed so as to find the value of p quickly
-            if (2 * qlist.get(j) < num && (num - 2 * qlist.get(j)) != 2 && Prime.isPrime((num - 2 * qlist.get(j)))) { //checking if the p value is not even and is a prime number.
-
-
-                if (this.p < (num - 2 * qlist.get(j))) {
-                    this.p = (num - 2 * qlist.get(j));
-                    //this.q = qlist.get(j);
-                    this.maxnum = num;
-                } else if (this.p == (num - 2 * qlist.get(j))) {
-                    if (this.maxnum < num) {
-                        this.maxnum = num;
-                    }
-                }
-
-                break;
-
-            }
-
-        }
-    }
-
     /**
      * This is the main method.
      *
@@ -116,41 +82,34 @@ public class Lemoineconjec {
 
     public static void main(String[] args) {
         Lemoineconjec lemoine = new Lemoineconjec();
-        if (!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))) {
-            return;
-        }
+        if (!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))) {return;}
         lemoine.Qlist(Integer.parseInt(args[1]));
-        long starttime = System.currentTimeMillis();
         int lower = Integer.parseInt(args[0]);
         int upper = Integer.parseInt(args[1]);
         // omp parallel for
         for (int x = lower; x <= upper; x++) {
             if (x % 2 != 0) {
-                boolean val = true;
-                for (int j = (lemoine.qlist.size() - 1); val && j >= 0; j--) {
+                boolean check = true;
+                for (int j = (lemoine.qlist.size() - 1); check && j >= 0; j--) {
                     if (2 * lemoine.qlist.get(j) < x && (x - 2 * lemoine.qlist.get(j)) != 2 && Prime.isPrime((x - 2 * lemoine.qlist.get(j)))) {
                         // omp critical
                         {
-
                             if (lemoine.p < (x - 2 * lemoine.qlist.get(j))) {
                                 lemoine.p = (x - 2 * lemoine.qlist.get(j));
-                                //lemoine.q = lemoine.qlist.get(j);
                                 lemoine.maxnum = x;
                             } else if (lemoine.p == (x - 2 * lemoine.qlist.get(j))) {
                                 if (lemoine.maxnum < x) {
                                     lemoine.maxnum = x;
                                 }
                             }
-                            val = false;
-                            //break;
+                            check = false;
                         }
                     }
                 }
             }
         }
-        long endtime = System.currentTimeMillis();
         System.out.println(lemoine.maxnum + " = " + lemoine.p + " + 2*" + ((lemoine.maxnum - lemoine.p) / 2));
-        //System.out.println("Time elapsed : " + (endtime - starttime));
+
     }
 }
 
