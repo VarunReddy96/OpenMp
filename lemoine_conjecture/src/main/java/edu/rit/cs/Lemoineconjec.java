@@ -25,7 +25,6 @@ import java.util.List;
 public class Lemoineconjec {
     public int maxnum = 0;
     public int p = 0;
-    public int q = 0;
     List<Integer> qlist = new ArrayList<>();
 
     /**
