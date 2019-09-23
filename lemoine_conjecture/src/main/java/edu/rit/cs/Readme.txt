@@ -21,10 +21,10 @@
 *) Hence in Lemoineconjec I have created a fixed q list which is shared by all threads.
 
 *) The speedup = (Time taken to run sequentially)/(Time taken to run in parallel)
-   Time taken to run sequentially by Lemoineconjec = 21.154 sec (averaged over 8 computations on kraken cluster)
-   Time taken Lemoineconjec to run in parallel     = 4.359 sec  (averaged over 8 computations on Kraken cluster)
+   Time taken to run sequentially by Lemoineconjec = 20.154 sec (averaged over 8 computations on kraken cluster)
+   Time taken Lemoineconjec to run in parallel     = 4.814 sec  (averaged over 8 computations on Kraken cluster)
 
-*) Hence the speed up acheived = 21.154/4.359 = 4.852. This is an exampe of strong scaling since given the problem size the more 
+*) Hence the speed up acheived = 21.154/4.814 = 4.394. This is an exampe of strong scaling since given the problem size the more 
    number of threads running the faster we will see the result.
  
 *) Time taken to run sequentially by Lemoineconjecseq = 0.7 sec(averaged over 8 computations on kraken cluster)
