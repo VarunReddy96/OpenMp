@@ -9,7 +9,7 @@
    and if omp4j.jar is used it performs the computation in parallel.
 
 *) The second file I have added is Lemoineconjecseq. This .java file doesnot contain any omp4j.jar directives and will only 
-   execute sequentially. I have added this since from my analysis I found that this is the most effixcient way to perform 
+   execute sequentially. I have added this since from my analysis I found that this is the most efficient way to perform 
    sequential compuatation for Lemoine conjecture.
 
 *) In the Lemoineconjecseq I have kept track of Prime iterator and a list a q values to acheive this efficiency.
