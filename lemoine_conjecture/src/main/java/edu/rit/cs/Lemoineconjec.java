@@ -29,7 +29,6 @@ public class Lemoineconjec {
 
     /**
      * Default Constructor
-     *
      */
 
     public Lemoineconjec() {
@@ -40,7 +39,6 @@ public class Lemoineconjec {
      *
      * @param lower: The lower bound of the range to verify lemoine conjecture.
      * @param upper: The upper bound of the range to verify lemoine conjecture.
-     *
      * @return boolean Returns true only if both the input arguments are valid.
      */
 
@@ -74,17 +72,16 @@ public class Lemoineconjec {
     }
 
     /**
-     * This is the main method.
+     * This method checks for the lemoine conjecture for the all the valid values in the
+     * range inputed.
      *
-     * @param args
+     * @param lower:   The lower bound of the sequence.
+     * @param upper:   The upper bound of the sequence.
+     * @param lemoine: The class where qlist is stored.
+     *
      */
 
-    public static void main(String[] args) {
-        Lemoineconjec lemoine = new Lemoineconjec();
-        if (!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))) {return;}
-        lemoine.Qlist(Integer.parseInt(args[1]));
-        int lower = Integer.parseInt(args[0]);
-        int upper = Integer.parseInt(args[1]);
+    public void lemoineconjec(int lower, int upper, Lemoineconjec lemoine) {
         // omp parallel for
         for (int x = lower; x <= upper; x++) {
             if (x % 2 != 0) {
@@ -107,7 +104,33 @@ public class Lemoineconjec {
                 }
             }
         }
+
         System.out.println(lemoine.maxnum + " = " + lemoine.p + " + 2*" + ((lemoine.maxnum - lemoine.p) / 2));
+
+    }
+
+
+    /**
+     * This is the main method.
+     *
+     * @param args
+     */
+
+    public static void main(String[] args) {
+
+        Lemoineconjec lemoine = new Lemoineconjec();
+        try {
+            if (!lemoine.checkarguments(Integer.parseInt(args[0]), Integer.parseInt(args[1]))) {
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Enter valid Integers");
+            return;
+        }
+        lemoine.Qlist(Integer.parseInt(args[1]));
+        int lower = Integer.parseInt(args[0]);
+        int upper = Integer.parseInt(args[1]);
+        lemoine.lemoineconjec(lower, upper, lemoine);
 
     }
 }
